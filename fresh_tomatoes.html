@@ -32,6 +32,10 @@
             margin-bottom: 20px;
             padding-top: 20px;
         }
+        .movie-synopsis {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+        }
         .movie-tile:hover {
             background-color: #EEE;
             cursor: pointer;
@@ -70,9 +74,16 @@
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-          $('.movie-tile').hide().first().show("fast", function showNext() {
-            $(this).next("div").show("fast", showNext);
-          });
+            $('.movie-tile').hide().first().show("fast", function showNext() {
+                $(this).next("div").show("fast", showNext);
+            });
+            
+            $(".movie-tile").hover(function (e) {
+                var movieDescription = $(this).attr('data-description');
+                $(this).append( $("<span class='movie-synopsis'>Synopsis: " + movieDescription + "</span>"));
+            }, function() {
+                $( this ).find( "span:last" ).remove();
+            });
         });
     </script>
 </head>
@@ -102,14 +113,19 @@
     </div>
     <div class="container">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="vwyZH85NQC4" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-description="Boy with toys" data-trailer-youtube-id="vwyZH85NQC4" data-toggle="modal" data-target="#trailer">
     <img src="http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg" width="220" height="342">
     <h2>Toy Story</h2>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="-9ceBgWV8io" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-description="Marine Love Story" data-trailer-youtube-id="uZNHIU3uHT4" data-toggle="modal" data-target="#trailer">
     <img src="http://upload.wikimedia.org/wikipedia/id/b/b0/Avatar-Teaser-Poster.jpg" width="220" height="342">
     <h2>Avatar</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-description="Machine save boy from machine" data-trailer-youtube-id="eajuMYNYtuY" data-toggle="modal" data-target="#trailer">
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Terminator2poster.jpg" width="220" height="342">
+    <h2>Terminator 2</h2>
 </div>
 
     </div>
