@@ -42,7 +42,7 @@ main_page_head = '''
             font-family: "Times New Roman", Times, serif;
             font-size: 24px;
         }
-        .movie-tile:hover {
+        .col-md-6:hover {
             background-color: #EEE;
             cursor: pointer;
         }
@@ -96,10 +96,6 @@ main_page_head = '''
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-            $('.movie-tile').hide();
-            $('.movie-tile').each(function showNext() {
-                $(this).show("fast", showNext);
-            });
             
             $(".movie-tile").hover(function (e) {
                 var movieDescription = $(this).attr('data-description');
