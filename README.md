@@ -28,3 +28,6 @@ fresh_tomatoes.py is a Udacity provided code to generate a web page for the movi
 ##media.py
 
 - Holds constructor class Movies
+
+##To run the program
+Please run the entertainment_center.py file to see the results. This should create a fresh_tomatoes.html as well as open it up in your browser of choice.
