@@ -23,3 +23,4 @@ movies = [toy_story, avatar, terminator]
 
 #Open the beautiful page
 fresh_tomatoes.open_movies_page(movies)
+
